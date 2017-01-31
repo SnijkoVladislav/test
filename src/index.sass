@@ -1,0 +1,41 @@
+@import "app/**/*"
+
+input
+  &[type="text"], &[type="email"], &[type="password"]
+    height: 46px
+    border: 1px solid #ddd
+    font-size: 16px
+    transition: all 0.1s linear
+  &.input-form.ng-touched
+    &.ng-valid
+      border: 1px solid #1CA347
+    &.ng-invalid
+      border: 1px solid #d9534f
+  &:hover, &:focus
+    outline: none
+    box-shadow: none
+    border-color: #ccc
+
+.btn-service-whale
+  outline: none
+  color: #fff
+  font-size: 14px
+  height: auto
+  font-weight: normal
+  padding: 14px 10px
+  text-transform: uppercase
+  border-color: #59B2E6
+  &:hover, &:focus
+    color: #fff
+
+.btn-login
+  background-color: #59B2E0
+  &:hover, &:focus
+    background-color: #53A3CD
+    border-color: #53A3CD
+
+.btn-register
+  background-color: #1CB94E
+  &:hover, &:focus
+    background-color: #1CA347
+    border-color: #1CA347

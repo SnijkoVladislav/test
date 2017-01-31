@@ -1,0 +1,14 @@
+<div ng-if="$ctrl.basket.goods.length">
+  <button class="btn basket-toggle" ng-click="isBasket = !isBasket">
+    <i class="glyphicon glyphicon-shopping-cart"> {{$ctrl.basket.goods.length}}</i>
+  </button>
+  <div class="basket-wrap" ng-show="isBasket">
+    <ul class="basket">
+      <li class="goods" ng-repeat="good in $ctrl.basket.goods track by $index">
+        <span>{{ good.name }}</span>
+        <span>${{ good.price }}</span>
+        <a class="glyphicon glyphicon-minus pull-right" ng-click="$ctrl.basket.delItem($index)"></a>
+      </li>
+    </ul>
+  </div>
+</div>

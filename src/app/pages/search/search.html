@@ -1,0 +1,20 @@
+<service-whale-header></service-whale-header>
+<div class="container search-page">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel">
+        <div class="panel-heading">
+          <service-whale-cart-list-filter
+              filter-list="$ctrl.filter"
+              list="$ctrl.goods">
+          </service-whale-cart-list-filter>
+        </div>
+        <div class="panel-body">
+          <service-whale-cart-list
+              items="$ctrl.filter ? $ctrl.filter : $ctrl.goods">
+          </service-whale-cart-list>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="row">
+  <table class="table borderless">
+    <thead>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in $ctrl.items">
+        <td class="col-md-4">
+          <div class="media">
+            <a class="thumbnail pull-left" href="#"> <img class="media-object" src="{{item.picture}}"> </a>
+            <div class="media-body">
+              <h3 class="media-heading">{{ item.name }}</h3>
+              <h4 class="media-heading">{{ item.color }}</h4>
+              <service-whale-rating rating-value="item.rating" ></service-whale-rating>
+            </div>
+          </div>
+        </td>
+        <td class="col-md-4 text-center">
+          <div class="data-label">{{ item.data | date:'yyyy-MM-dd' }}</div>
+          <div>{{ item.inStock ? 'in stock' : 'not in stock' }}</div>
+        </td>
+        <td class="col-md-4 text-right">
+          <div class="price-label">${{ item.price }}</div>
+          <button type="button" class="btn btn-primary btn-service-whale" ng-click="$ctrl.addItemToBasket(item)">Add</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

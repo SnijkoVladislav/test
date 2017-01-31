@@ -1,0 +1,5 @@
+<ul class="star-rating">
+  <li ng-repeat="star in $ctrl.stars" class="star" ng-click="$ctrl.toggle($index)">
+    <i class="glyphicon glyphicon-star{{star.filled ? '' : '-empty'}}"></i>
+  </li>
+</ul>

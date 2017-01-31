@@ -1,0 +1,25 @@
+{
+  "name": "fountain-inject",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-ui-router": "1.0.0-beta.1",
+    "angular-bootstrap": "^2.4.0",
+    "bootstrap": "^3.3.7",
+    "angular-input-modified": "^2.3.3",
+  "crypto-js-aes": "https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js",
+    "angularjs-crypto": "^1.4.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.5.0"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  }
+}

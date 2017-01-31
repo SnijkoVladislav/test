@@ -1,0 +1,66 @@
+<form name="$ctrl.filterForm">
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="input-group">
+          <span class="input-group-addon">Data from</span>
+          <input name="dataFrom" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="$ctrl.models.dataFrom" is-open="$ctrl.dataFrom.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" placeholder="Data from"/>
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default btn-data-filter" ng-click="$ctrl.dataFromOpen()"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="input-group">
+          <span class="input-group-addon">Data to</span>
+          <input name="dataTo" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="$ctrl.models.dataTo" is-open="$ctrl.dataTo.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" placeholder="Data to"/>
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default btn-data-filter" ng-click="$ctrl.dataToOpen()"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="input-group data-input pull-right">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+          <input name="inStock" ng-model="$ctrl.models.inStock" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">In stock only</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="input-group">
+          <span class="input-group-addon">Price from</span>
+          <input name="priceFrom" type="text" ng-model-options="{ debounce: 500 }" ng-model="$ctrl.models.priceFrom" class="form-control" placeholder="Price from">
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="input-group">
+          <span class="input-group-addon">Price to</span>
+          <input name="priceTo" type="text" ng-model-options="{ debounce: 500 }" ng-model="$ctrl.models.priceTo" class="form-control" placeholder="Price to">
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="btn-group pull-right" uib-dropdown dropdown-append-to-body>
+          <!-- to do: create component selectbox -->
+          <!-- warning: has bag https://github.com/betsol/angular-input-modified/issues/50 . Wait pull request -->
+          <input style="display: none;" name="color" ng-model="$ctrl.models.color" type="text">
+          <button id="btn-append-to-body" type="button" class="btn btn-color-select" uib-dropdown-toggle>
+            {{$ctrl.models.color}}<span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-body">
+            <li role="menuitem" ng-repeat="color in $ctrl.colors"><a href="#" ng-click="$ctrl.colorsChange(color)">{{color}}</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
